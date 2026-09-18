@@ -33,40 +33,39 @@ body{
 
 /* ENCABEZADO */
 
-.nav{
-  max-width:1100px;
-  margin:auto;
-  padding:16px 25px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+header{
   background:#fff;
 }
 
+.nav{
+  max-width:1100px;
+  margin:auto;
+  padding:15px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
 .logo{
-  width:70px;
-  height:70px;
+  width:75px;
+  height:75px;
   object-fit:contain;
 }
 
-.nav strong{
+.nombre{
   font-size:24px;
-}
-
-.navlinks a{
-  margin-left:20px;
-  color:var(--texto);
-  text-decoration:none;
-  font-weight:700;
+  font-weight:800;
+  text-align:right;
 }
 
 /* PORTADA */
 
 .hero{
   background:
-    linear-gradient(rgba(7,86,164,.83),rgba(7,86,164,.90)),
-    url('assets/farmacia.png') center/cover;
-  min-height:430px;
+    linear-gradient(rgba(0,86,170,.78),rgba(0,86,170,.88)),
+    url("assets/farmacia.png") center/cover;
+  min-height:470px;
   display:flex;
   align-items:center;
 }
@@ -75,48 +74,53 @@ body{
   width:1100px;
   max-width:100%;
   margin:auto;
-  padding:55px 28px;
+  padding:55px 28px 80px;
   color:#fff;
 }
 
 .hero h1{
   font-size:48px;
   line-height:1.05;
-  margin:0 0 20px;
+  margin:0 0 22px;
 }
 
 .hero h1 span{
-  color:#72db4f;
+  color:#70d34f;
 }
 
 .hero p{
   font-size:21px;
+  line-height:1.45;
   max-width:650px;
-  line-height:1.4;
-}
-
-.botones{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:28px;
+  margin-bottom:30px;
 }
 
 /* BOTONES */
 
-.btn{
+.botones{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.btn-social{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  min-height:58px;
-  padding:14px 24px;
+  gap:12px;
+  min-width:220px;
+  padding:15px 24px;
   border-radius:14px;
   color:#fff;
   text-decoration:none;
-  font-weight:800;
   font-size:18px;
+  font-weight:800;
   box-shadow:0 6px 18px rgba(0,0,0,.22);
+  transition:.2s;
+}
+
+.btn-social:hover{
+  transform:translateY(-2px);
 }
 
 .whatsapp{
@@ -127,69 +131,14 @@ body{
   background:var(--facebook);
 }
 
-.maps{
-  background:#199447;
-}
-
-/* LOGO WHATSAPP HECHO CON CSS */
-
-.wa-icon{
-  width:30px;
-  height:30px;
-  border:3px solid #fff;
-  border-radius:50%;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
+.social-icon{
+  width:28px;
+  height:28px;
+  display:block;
   flex:none;
 }
 
-.wa-icon::before{
-  content:"";
-  width:12px;
-  height:7px;
-  border-left:3px solid #fff;
-  border-bottom:3px solid #fff;
-  border-radius:8px;
-  transform:rotate(-42deg);
-}
-
-.wa-icon::after{
-  content:"";
-  position:absolute;
-  left:0px;
-  bottom:-4px;
-  width:8px;
-  height:8px;
-  background:var(--verde);
-  border-left:3px solid #fff;
-  transform:rotate(-25deg);
-}
-
-/* LOGO FACEBOOK */
-
-.fb-icon{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background:#fff;
-  color:var(--facebook);
-  display:inline-flex;
-  align-items:flex-end;
-  justify-content:center;
-  font-family:Arial,sans-serif;
-  font-size:27px;
-  line-height:27px;
-  font-weight:900;
-  flex:none;
-}
-
-.fb-icon::before{
-  content:"f";
-}
-
-/* CONTENIDO */
+/* SECCIONES */
 
 .wrap{
   max-width:1100px;
@@ -211,43 +160,53 @@ body{
 }
 
 .card{
-  text-align:center;
   background:#fff;
   border-radius:20px;
-  padding:28px 22px;
+  padding:30px 24px;
+  text-align:center;
   box-shadow:0 5px 22px rgba(0,0,0,.10);
 }
 
-.ico{
-  font-size:43px;
+.card-icon{
+  font-size:45px;
+  margin-bottom:10px;
 }
 
 .card h3{
   color:var(--azul);
   font-size:24px;
-  margin:12px 0;
+  margin:8px 0 10px;
 }
 
 .card p{
   font-size:17px;
-  line-height:1.4;
+  line-height:1.5;
 }
 
-.consulta{
-  text-align:center;
+/* DISPONIBILIDAD */
+
+.disponibilidad{
   margin-top:30px;
+  text-align:center;
 }
+
+.disponibilidad p{
+  font-size:18px;
+  line-height:1.5;
+}
+
+/* FOTO */
 
 .photo{
   width:100%;
-  max-width:760px;
+  max-width:780px;
   display:block;
   margin:40px auto 0;
   border-radius:20px;
-  box-shadow:0 6px 22px rgba(0,0,0,.15);
+  box-shadow:0 5px 22px rgba(0,0,0,.15);
 }
 
-/* UBICACIÓN Y HORARIO */
+/* UBICACIÓN */
 
 .info{
   background:var(--fondo);
@@ -259,20 +218,39 @@ body{
   gap:28px;
 }
 
-.panel{
+.location{
   background:#fff;
   padding:30px;
   border-radius:20px;
   box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
-.panel h2{
+.location h2{
   color:var(--azul);
   margin-top:0;
 }
 
+.location p{
+  font-size:18px;
+  line-height:1.5;
+}
+
+.map-btn{
+  display:inline-block;
+  margin-top:10px;
+  background:#159447;
+  color:#fff;
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:13px;
+  font-weight:800;
+  box-shadow:0 5px 15px rgba(0,0,0,.18);
+}
+
+/* HORARIO */
+
 .hours{
-  background:linear-gradient(135deg,#0756a4,#0786df);
+  background:linear-gradient(135deg,#0756a4,#0786dc);
   color:#fff;
   padding:30px;
   border-radius:20px;
@@ -281,6 +259,12 @@ body{
 
 .hours h2{
   margin-top:0;
+  font-size:28px;
+}
+
+.hours p{
+  font-size:18px;
+  line-height:1.5;
 }
 
 /* PIE */
@@ -289,31 +273,33 @@ body{
   background:var(--azul-oscuro);
   color:#fff;
   text-align:center;
-  padding:30px 20px 95px;
+  padding:32px 20px 95px;
 }
 
 .footer strong{
   font-size:22px;
 }
 
+.footer p{
+  margin:10px 0;
+}
+
 .small{
   opacity:.88;
 }
 
-/* WHATSAPP FLOTANTE */
+/* WHATSAPP FIJO */
 
 .mobilebar{
   display:none;
 }
 
+/* CELULAR */
+
 @media(max-width:760px){
 
-  .navlinks{
-    display:none;
-  }
-
   .nav{
-    padding:14px 22px;
+    padding:13px 22px;
   }
 
   .logo{
@@ -321,20 +307,20 @@ body{
     height:62px;
   }
 
-  .nav strong{
+  .nombre{
     font-size:20px;
   }
 
   .hero{
-    min-height:430px;
+    min-height:500px;
   }
 
   .hero-in{
-    padding:45px 25px 85px;
+    padding:48px 25px 95px;
   }
 
   .hero h1{
-    font-size:40px;
+    font-size:42px;
   }
 
   .hero p{
@@ -346,12 +332,16 @@ body{
     grid-template-columns:1fr;
   }
 
-  .btn{
+  .btn-social{
     width:100%;
   }
 
+  .wrap{
+    padding:45px 24px;
+  }
+
   .title{
-    font-size:32px;
+    font-size:33px;
   }
 
   .grid,
@@ -359,27 +349,28 @@ body{
     grid-template-columns:1fr;
   }
 
-  .wrap{
-    padding:45px 24px;
-  }
-
   .mobilebar{
     display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
     position:fixed;
     z-index:999;
     bottom:12px;
-    left:18px;
-    right:18px;
-    min-height:58px;
+    left:12px;
+    right:12px;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
     background:var(--verde);
     color:#fff;
     text-decoration:none;
-    border-radius:16px;
+    padding:14px 12px;
+    border-radius:15px;
     font-weight:800;
-    box-shadow:0 7px 24px rgba(0,0,0,.30);
+    box-shadow:0 6px 22px rgba(0,0,0,.30);
+  }
+
+  .mobilebar svg{
+    width:25px;
+    height:25px;
   }
 }
 </style>
@@ -390,16 +381,14 @@ body{
 <header>
   <div class="nav">
 
-    <img class="logo"
-         src="assets/logo.jpeg"
-         alt="Logotipo Farmacia San Matías">
+    <img
+      class="logo"
+      src="assets/logo.jpeg"
+      alt="Logotipo Farmacia San Matías"
+    >
 
-    <strong>Farmacia San Matías</strong>
-
-    <div class="navlinks">
-      <a href="#servicios">Servicios</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#horario">Horario</a>
+    <div class="nombre">
+      Farmacia San Matías
     </div>
 
   </div>
@@ -411,7 +400,7 @@ body{
   <div class="hero-in">
 
     <h1>
-      Tu salud es
+      Tu salud es<br>
       <span>nuestra prioridad</span>
     </h1>
 
@@ -422,22 +411,56 @@ body{
 
     <div class="botones">
 
-      <a class="btn whatsapp"
-         href="https://wa.me/522225233225?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20un%20producto."
-         target="_blank"
-         rel="noopener">
+      <!-- WHATSAPP -->
+      <a
+        class="btn-social whatsapp"
+        href="https://wa.me/522225233225?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20un%20producto."
+        target="_blank"
+        rel="noopener"
+      >
 
-        <span class="wa-icon"></span>
+        <svg
+          class="social-icon"
+          viewBox="0 0 32 32"
+          aria-hidden="true"
+        >
+          <path
+            fill="#ffffff"
+            d="M16.04 3C9.41 3 4.02 8.36 4.02 14.96c0 2.33.68 4.6 1.96 6.53L4 28.72l7.42-1.95a12.1 12.1 0 0 0 4.61.91h.01c6.62 0 12.01-5.36 12.01-11.96C28.05 9.12 22.66 3 16.04 3zm0 21.98h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-4.4 1.16 1.17-4.27-.22-.35a9.26 9.26 0 0 1-1.43-4.95c0-5.12 4.2-9.29 9.36-9.29 5.16 0 9.36 4.17 9.36 9.29 0 5.12-4.2 9.92-8.7 9.92zm5.14-7.42c-.28-.14-1.66-.81-1.92-.9-.26-.09-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.53-.88-2.1-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1  .97-1 2.37 0 1.39 1.03 2.74 1.17 2.93.14.19 2.02 3.06 4.9 4.29.68.29 1.22.47 1.64.6.69.22 1.31.19 1.81.12.55-.08 1.66-.67 1.9-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33z"
+          />
+        </svg>
+
         WhatsApp
 
       </a>
 
-      <a class="btn facebook"
-         href="https://www.facebook.com/share/19g6Jny3WJ/?mibextid=wwXIfr"
-         target="_blank"
-         rel="noopener">
 
-        <span class="fb-icon"></span>
+      <!-- FACEBOOK -->
+      <a
+        class="btn-social facebook"
+        href="https://www.facebook.com/share/19g6Jny3WJ/"
+        target="_blank"
+        rel="noopener"
+      >
+
+        <svg
+          class="social-icon"
+          viewBox="0 0 32 32"
+          aria-hidden="true"
+        >
+          <circle
+            cx="16"
+            cy="16"
+            r="15"
+            fill="#ffffff"
+          />
+
+          <path
+            fill="#1877F2"
+            d="M18.3 27V17.4h3.2l.5-3.7h-3.7v-2.4c0-1.1.3-1.8 1.9-1.8h2V6.2c-.35-.05-1.55-.15-2.95-.15-2.92 0-4.92 1.78-4.92 5.05v2.6H11v3.7h3.33V27h3.97z"
+          />
+        </svg>
+
         Facebook
 
       </a>
@@ -453,37 +476,58 @@ body{
 
 <section class="wrap" id="servicios">
 
-  <h2 class="title">Nuestros servicios</h2>
+  <h2 class="title">
+    Nuestros servicios
+  </h2>
 
   <div class="grid">
 
     <div class="card">
-      <div class="ico">💊</div>
-      <h3>Medicamentos</h3>
+      <div class="card-icon">💊</div>
+
+      <h3>
+        Medicamentos
+      </h3>
+
       <p>
         Medicamentos genéricos de alta calidad y de marca.
       </p>
     </div>
 
+
     <div class="card">
-      <div class="ico">🩺</div>
-      <h3>Consulta médica</h3>
+      <div class="card-icon">🩺</div>
+
+      <h3>
+        Consulta médica
+      </h3>
+
       <p>
         Atención profesional para ti y tu familia.
       </p>
     </div>
 
+
     <div class="card">
-      <div class="ico">🩹</div>
-      <h3>Certificados médicos</h3>
+      <div class="card-icon">📋</div>
+
+      <h3>
+        Certificados médicos
+      </h3>
+
       <p>
         Consulta disponibilidad y requisitos.
       </p>
     </div>
 
+
     <div class="card">
-      <div class="ico">📱</div>
-      <h3>Recargas</h3>
+      <div class="card-icon">📱</div>
+
+      <h3>
+        Recargas
+      </h3>
+
       <p>
         Recargas telefónicas sin comisión.
       </p>
@@ -491,28 +535,48 @@ body{
 
   </div>
 
-  <div class="consulta">
+
+  <div class="disponibilidad">
+
+    <h2>
+      ¿Buscas un medicamento?
+    </h2>
 
     <p>
-      ¿Buscas un medicamento? Escríbenos por WhatsApp
-      para consultar disponibilidad.
+      Escríbenos por WhatsApp para consultar disponibilidad.
+      Te atendemos de forma rápida y directa.
     </p>
 
-    <a class="btn whatsapp"
-       href="https://wa.me/522225233225?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20un%20producto."
-       target="_blank"
-       rel="noopener">
+    <a
+      class="btn-social whatsapp"
+      href="https://wa.me/522225233225?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20un%20producto."
+      target="_blank"
+      rel="noopener"
+    >
 
-      <span class="wa-icon"></span>
+      <svg
+        class="social-icon"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+      >
+        <path
+          fill="#ffffff"
+          d="M16.04 3C9.41 3 4.02 8.36 4.02 14.96c0 2.33.68 4.6 1.96 6.53L4 28.72l7.42-1.95a12.1 12.1 0 0 0 4.61.91h.01c6.62 0 12.01-5.36 12.01-11.96C28.05 9.12 22.66 3 16.04 3zm0 21.98h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-4.4 1.16 1.17-4.27-.22-.35a9.26 9.26 0 0 1-1.43-4.95c0-5.12 4.2-9.29 9.36-9.29 5.16 0 9.36 4.17 9.36 9.29 0 5.12-4.2 9.92-8.7 9.92zm5.14-7.42c-.28-.14-1.66-.81-1.92-.9-.26-.09-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.53-.88-2.1-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1 .97-1 2.37 0 1.39 1.03 2.74 1.17 2.93.14.19 2.02 3.06 4.9 4.29.68.29 1.22.47 1.64.6.69.22 1.31.19 1.81.12.55-.08 1.66-.67 1.9-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33z"
+        />
+      </svg>
+
       Consultar disponibilidad
 
     </a>
 
   </div>
 
-  <img class="photo"
-       src="assets/farmacia.png"
-       alt="Fachada de Farmacia San Matías">
+
+  <img
+    class="photo"
+    src="assets/farmacia.png"
+    alt="Fachada de Farmacia San Matías"
+  >
 
 </section>
 
@@ -521,9 +585,11 @@ body{
 
   <div class="wrap two">
 
-    <div class="panel" id="ubicacion">
+    <div class="location" id="ubicacion">
 
-      <h2>📍 Visítanos</h2>
+      <h2>
+        📍 Visítanos
+      </h2>
 
       <p>
         <strong>2 de Septiembre 109 A</strong><br>
@@ -531,13 +597,13 @@ body{
         Junto a la tienda del Mosco.
       </p>
 
-      <a class="btn maps"
-         href="https://maps.app.goo.gl/JWZnJaowwH5om84p7"
-         target="_blank"
-         rel="noopener">
-
+      <a
+        class="map-btn"
+        href="https://maps.app.goo.gl/JWZnJaowwH5om84p7"
+        target="_blank"
+        rel="noopener"
+      >
         📍 Cómo llegar
-
       </a>
 
     </div>
@@ -545,7 +611,9 @@ body{
 
     <div class="hours" id="horario">
 
-      <h2>🕒 Horario</h2>
+      <h2>
+        🕒 Horario
+      </h2>
 
       <p>
         <strong>Lunes a viernes</strong>
@@ -571,9 +639,13 @@ body{
 
 <footer class="footer">
 
-  <strong>Farmacia San Matías</strong>
+  <strong>
+    Farmacia San Matías
+  </strong>
 
-  <p>Tu salud, nuestra prioridad.</p>
+  <p>
+    Tu salud, nuestra prioridad.
+  </p>
 
   <p class="small">
     WhatsApp: 222 523 3225 · San Matías Cocoyotla, Puebla
@@ -582,12 +654,25 @@ body{
 </footer>
 
 
-<a class="mobilebar"
-   href="https://wa.me/522225233225?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20un%20producto."
-   target="_blank"
-   rel="noopener">
+<!-- BOTÓN WHATSAPP FIJO EN CELULAR -->
 
-  <span class="wa-icon"></span>
+<a
+  class="mobilebar"
+  href="https://wa.me/522225233225?text=Hola%2C%20quiero%20consultar%20la%20disponibilidad%20de%20un%20producto."
+  target="_blank"
+  rel="noopener"
+>
+
+  <svg
+    viewBox="0 0 32 32"
+    aria-hidden="true"
+  >
+    <path
+      fill="#ffffff"
+      d="M16.04 3C9.41 3 4.02 8.36 4.02 14.96c0 2.33.68 4.6 1.96 6.53L4 28.72l7.42-1.95a12.1 12.1 0 0 0 4.61.91h.01c6.62 0 12.01-5.36 12.01-11.96C28.05 9.12 22.66 3 16.04 3zm0 21.98h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-4.4 1.16 1.17-4.27-.22-.35a9.26 9.26 0 0 1-1.43-4.95c0-5.12 4.2-9.29 9.36-9.29 5.16 0 9.36 4.17 9.36 9.29 0 5.12-4.2 9.92-8.7 9.92zm5.14-7.42c-.28-.14-1.66-.81-1.92-.9-.26-.09-.45-.14-.64.14-.19.28-.73.9-.9 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.64-1.53-.88-2.1-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.35-.26.28-1 .97-1 2.37 0 1.39 1.03 2.74 1.17 2.93.14.19 2.02 3.06 4.9 4.29.68.29 1.22.47 1.64.6.69.22 1.31.19 1.81.12.55-.08 1.66-.67 1.9-1.32.23-.65.23-1.21.16-1.32-.07-.12-.26-.19-.54-.33z"
+    />
+  </svg>
+
   WhatsApp · 222 523 3225
 
 </a>
